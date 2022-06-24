@@ -25,6 +25,7 @@ packer.startup {
 
 		-- [LSP]
 		use "neovim/nvim-lspconfig"
+		use "onsails/lspkind.nvim"
 		
 		-- [CMP]
 		use "hrsh7th/nvim-cmp"
@@ -32,6 +33,9 @@ packer.startup {
 		use "hrsh7th/cmp-path"
 		use "hrsh7th/cmp-buffer"
 		use "hrsh7th/cmp-nvim-lua"
+
+		-- [Snippet Engine]
+		use "L3MON4D3/LuaSnip"
 
 		if packer_bootstrap then
 			packer.sync()
