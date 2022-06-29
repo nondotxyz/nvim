@@ -4,7 +4,7 @@ local lspkind = require "lspkind"
 
 cmp.setup {
 	snippet = {
-		expand = function(args) 
+		expand = function(args)
 			luasnip.lsp_expands(args.body)
 		end
 	},
@@ -35,6 +35,7 @@ cmp.setup {
 		["<CR>"] = cmp.mapping.confirm { select = true }
 	}),
 	sources = {
+		{ name = "nvim_lsp"},
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
@@ -47,3 +48,4 @@ cmp.setup {
 		ghost_text = true
 	}
 }
+

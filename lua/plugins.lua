@@ -22,11 +22,13 @@ packer.startup {
 
 		-- [Themes]
 		use "shaeinst/roshnivim-cs"
+		use "Mofiqul/vscode.nvim"
 
 		-- [LSP]
 		use "neovim/nvim-lspconfig"
 		use "onsails/lspkind.nvim"
-		
+		use "williamboman/nvim-lsp-installer"
+
 		-- [CMP]
 		use "hrsh7th/nvim-cmp"
 		use "hrsh7th/cmp-nvim-lsp"
