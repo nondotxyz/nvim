@@ -2,8 +2,8 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
 
 opt.wrap = false
 
