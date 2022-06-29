@@ -5,7 +5,7 @@ local lspkind = require "lspkind"
 cmp.setup {
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expands(args.body)
+			luasnip.lsp_expand(args.body)
 		end
 	},
 	formatting = {

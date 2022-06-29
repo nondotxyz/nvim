@@ -7,6 +7,27 @@ set_keymaps("<space>e", vim.diagnostic.open_float)
 set_keymaps("[d", vim.diagnostic.goto_prev)
 set_keymaps("]d", vim.diagnostic.goto_next)
 
+do
+	local signs = {
+		{ name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
+  }
+	for _, sign in ipairs(signs) do
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = ""})
+	end
+
+	vim.diagnostic.config {
+		virtual_text = false,
+		signs = {
+			active = signs,
+		},
+		update_in_insert = true,
+	}
+end
+
+
 local on_attach = function(client, bufnr)
 	opts = { noremap = true, silent = true, buffer = bufnr }
 	local function buf_set_keymaps(key, func) vim.keymap.set('n', key, func, opts) end
