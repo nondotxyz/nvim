@@ -15,7 +15,7 @@ if not status then
 end
 
 packer.startup {
-	function(use)
+	function(use, use_rocks)
 		use "wbthomason/packer.nvim"
 		use "nvim-lua/plenary.nvim"
 		use "rafcamlet/nvim-luapad"
