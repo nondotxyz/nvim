@@ -12,7 +12,7 @@ opt.relativenumber = true
 
 opt.termguicolors = true
 
-function setcolorscheme(theme)
+local function setcolorscheme(theme)
 	local exists, _ = pcall(vim.cmd, "color " .. theme)
 	if exists then
 		if theme == "vscode" then vim.g.vscode_transparent = 1 end

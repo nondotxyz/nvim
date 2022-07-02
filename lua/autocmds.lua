@@ -18,7 +18,7 @@ end
 
 create_au("autoload", {
 	{event = "BufWritePost", pattern = vim.fn.stdpath "config" .. "/**/*.lua", command = "source <afile>"},
-	{event = "BufWritePost", pattern = vim.fn.stdpath "config" .. "/**/plugins.lua", command = "source <afile> | PackerCompile"}
+	{event = "BufWritePost", pattern = vim.fn.stdpath "config" .. "/**/plugins.lua", command = "source <afile> | PackerSync"}
 })
 
 create_au("RestoreCursorShapeOnExist", {

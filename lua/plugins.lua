@@ -15,7 +15,7 @@ if not status then
 end
 
 packer.startup {
-	function(use, use_rocks)
+	function(use)
 		use "wbthomason/packer.nvim"
 		use "nvim-lua/plenary.nvim"
 		use "rafcamlet/nvim-luapad"
@@ -38,6 +38,9 @@ packer.startup {
 
 		-- [Snippet Engine]
 		use "L3MON4D3/LuaSnip"
+
+		-- [Schema Store]
+		use "b0o/SchemaStore.nvim"
 
 		if packer_bootstrap then
 			packer.sync()
