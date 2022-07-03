@@ -45,6 +45,11 @@ packer.startup {
 		-- [Statusline]
 		use "nvim-lualine/lualine.nvim"
 
+		-- [Bufferline]
+		use "akinsho/bufferline.nvim"
+
+		use "kyazdani42/nvim-web-devicons"
+
 		if packer_bootstrap then
 			packer.sync()
 		end
