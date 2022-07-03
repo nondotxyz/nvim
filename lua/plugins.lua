@@ -42,6 +42,9 @@ packer.startup {
 		-- [Schema Store]
 		use "b0o/SchemaStore.nvim"
 
+		-- [Statusline]
+		use "nvim-lualine/lualine.nvim"
+
 		if packer_bootstrap then
 			packer.sync()
 		end
