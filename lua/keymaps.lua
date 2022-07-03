@@ -1,21 +1,35 @@
-local opts = { noremap = true, silent = true }
+local function set_keymaps(keymaps_obj_list)
+	for _, keymaps_obj in pairs(keymaps_obj_list) do
+		local mode = keymaps_obj[1]
+		local opts = keymaps_obj[3] or nil
+		for _, keymaps in pairs(keymaps_obj[2]) do
+			if keymaps[3] and opts then
+				opts = keymaps[3]
+			elseif not keymaps[3] and not opts then
+				error("No options provided.")
+			end
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+			vim.keymap.set(mode, keymaps[1], keymaps[2], opts)
+		end
+	end
+end
 
---Remap space as leader key
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+set_keymaps {
+	{"n",{
+		{"<C-h>", "<C-w>h"},
+		{"<C-j>", "<C-w>j"},
+		{"<C-k>", "<C-w>k"},
+		{"<C-l>", "<C-w>l"},
 
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+		{"<C-Up>", ":resize -2<CR>"},
+		{"<C-Down", ":resize +2<CR>"},
+		{"<C-Left>", ":vertical resize -2<CR>"},
+		{"<C-Right>", ":vertical resize +2<CR>"},
 
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+		{"b]", ":bnext<CR>"},
+		{"b]", ":bprevious<CR>"},
 
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+		{"<A-j>", "<Esc>:m .+1<CR>==gi"},
+		{"<A-k>", "<Esc>:m .-2<CR>==gi"}
+	}, { noremap=true, silent=true }}
+}
