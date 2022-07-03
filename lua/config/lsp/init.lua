@@ -42,7 +42,7 @@ local on_attach = function(client, bufnr)
 		buf_set_keymaps(keys[1], keys[2])
 	end
 
-  if client.resolved_capabilities.document_formatting or client.resolved_capabilities.document_range_formatting then
+  if client.server_capabilities.document_formatting or client.server_capabilities.document_range_formatting then
 		buf_set_keymaps("<space>ff", vim.lsp.buf.formatting)
 	end
 end
