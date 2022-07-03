@@ -50,6 +50,10 @@ packer.startup {
 
 		use "kyazdani42/nvim-web-devicons"
 
+		-- [Markdown]
+		use { "ellisonleao/glow.nvim", branch = "main" }
+		use "davidgranstrom/nvim-markdown-preview"
+
 		if packer_bootstrap then
 			packer.sync()
 		end
