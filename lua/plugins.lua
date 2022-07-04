@@ -36,6 +36,12 @@ packer.startup {
 		use "hrsh7th/cmp-buffer"
 		use "hrsh7th/cmp-nvim-lua"
 
+		-- [Treesitter]
+		use {
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate"
+		}
+
 		-- [Snippet Engine]
 		use "L3MON4D3/LuaSnip"
 
