@@ -19,6 +19,7 @@ packer.startup {
 		use "wbthomason/packer.nvim"
 		use "nvim-lua/plenary.nvim"
 		use "rafcamlet/nvim-luapad"
+		use "jghauser/mkdir.nvim"
 
 		-- [Themes]
 		use "shaeinst/roshnivim-cs"
@@ -53,6 +54,9 @@ packer.startup {
 
 		-- [Bufferline]
 		use "akinsho/bufferline.nvim"
+
+		-- [File Explorer]
+		use "kyazdani42/nvim-tree.lua"
 
 		use "kyazdani42/nvim-web-devicons"
 
