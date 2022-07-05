@@ -7,9 +7,11 @@ set_keymaps("<space>e", vim.diagnostic.open_float)
 set_keymaps("[d", vim.diagnostic.goto_prev)
 set_keymaps("]d", vim.diagnostic.goto_next)
 
+
+
 do
 	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignError", text = "" },
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
