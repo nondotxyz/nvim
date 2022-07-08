@@ -4,6 +4,6 @@ utils.create_au("autoload", {
 })
 
 utils.create_au("RestoreCursorShapeOnExist", {
-	{event = "VimLeave", command = "set guicursor=a:hor20-blinkwait400-blinkoff400-blinkon400"}
+	{event = {"VimLeave", "VimSuspend"}, command = "set guicursor=a:hor20-blinkwait400-blinkoff400-blinkon400"},
 })
 
