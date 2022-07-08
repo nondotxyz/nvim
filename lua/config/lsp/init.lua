@@ -1,11 +1,14 @@
 local lsp_installer = require "nvim-lsp-installer"
 local lsp = require "lspconfig"
 
-local opts = { noremap = true, silent = true}
-local function set_keymaps(key, func) vim.keymap.set('n', key, func, opts) end
-set_keymaps("<space>e", vim.diagnostic.open_float)
-set_keymaps("[d", vim.diagnostic.goto_prev)
-set_keymaps("]d", vim.diagnostic.goto_next)
+utils.set_keymaps {
+	{"n", {
+		{ "<Space>e", vim.diagnostic.open_float },
+		{ "[d", vim.diagnostic.goto_prev },
+		{ "]d", vim.diagnostic.goto_next },
+	}, { noremap = true, silent = true }}
+}
+
 
 
 
@@ -31,21 +34,18 @@ end
 
 
 local on_attach = function(client, bufnr)
-	opts = { noremap = true, silent = true, buffer = bufnr }
-	local function buf_set_keymaps(key, func) vim.keymap.set('n', key, func, opts) end
-	local keymaps = {
-		{ "gD", vim.lsp.buf.declaration },
-		{ "gd", vim.lsp.buf.definition },
-		{ "gr", vim.lsp.buf.references },
-		{ "ga", vim.lsp.buf.code_action },
-		{ "K",  vim.lsp.buf.hover },
+	utils.set_keymaps {
+		{"n", {
+			{ "gD", vim.lsp.buf.declaration },
+			{ "gd", vim.lsp.buf.definition },
+			{ "gr", vim.lsp.buf.references },
+			{ "ga", vim.lsp.buf.code_action },
+			{ "K",  vim.lsp.buf.hover },
+		}, { noremap = true, silent = true, buffer = bufnr }}
 	}
-	for _, keys in ipairs(keymaps) do
-		buf_set_keymaps(keys[1], keys[2])
-	end
 
   if client.server_capabilities.document_formatting or client.server_capabilities.document_range_formatting then
-		buf_set_keymaps("<space>ff", vim.lsp.buf.formatting)
+		utils.set_keymaps { {"n", {"<Space>ff", vim.lsp.buf.formatting}, { noremap = true, silent = true, buffer = bufnr }}}
 	end
 end
 
@@ -56,7 +56,7 @@ lsp_installer.setup {
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
-	opts = { on_attach = on_attach, capabilities = capabilities }
+	local opts = { on_attach = on_attach, capabilities = capabilities }
 	local has_custom_opts, server_custom_opts = pcall(require, "config.lsp." .. server.name)
 
 	if has_custom_opts then
