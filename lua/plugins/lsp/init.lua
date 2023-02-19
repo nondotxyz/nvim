@@ -10,6 +10,7 @@ local spec = {
 			"j-hui/fidget.nvim",
 			config = true
 		},
+		{ "SmiteshP/nvim-navic" }
 	},
 }
 
@@ -89,9 +90,13 @@ spec.config = function()
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr, async = true })
+					vim.lsp.buf.format({ bufnr = bufnr })
 				end,
 			})
+		end
+
+		if client.server_capabilities.documentSymbolProvider then
+			require("nvim-navic").attach(client, bufnr)
 		end
 	end
 

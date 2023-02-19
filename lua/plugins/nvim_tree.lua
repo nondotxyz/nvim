@@ -91,8 +91,8 @@ spec.config = function()
 		local bufnr = vim.api.nvim_win_get_buf(winnr)
 		local buf_info = vim.fn.getbufinfo(bufnr)[1]
 		local tab_wins = vim.tbl_filter(function(w)
-				return w ~= winnr
-			end, vim.api.nvim_tabpage_list_wins(tabnr))
+			return w ~= winnr
+		end, vim.api.nvim_tabpage_list_wins(tabnr))
 		local tab_bufs = vim.tbl_map(vim.api.nvim_win_get_buf, tab_wins)
 		if buf_info.name:match(".*NvimTree_%d*$") then -- close buffer was nvim tree
 			-- Close all nvim tree on :q
@@ -133,8 +133,8 @@ spec.config = function()
 	end
 
 	wk.register({
-		["<space>t"] = { nvim_tree_keymaps, "" },
-	}, { silent = false })
+		["<space>tt"] = { nvim_tree_keymaps, "" },
+	}, { silent = true })
 end
 
 return spec

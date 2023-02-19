@@ -34,5 +34,9 @@ return {
 		"akinsho/toggleterm.nvim", config = function()
 		require("toggleterm").setup()
 	end
+	},
+	{
+		"karb94/neoscroll.nvim",
+		config = true
 	}
 }
