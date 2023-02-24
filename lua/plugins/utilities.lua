@@ -38,5 +38,11 @@ return {
 	{
 		"karb94/neoscroll.nvim",
 		config = true
+	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end
 	}
 }

@@ -13,7 +13,13 @@ spec.config = function()
 		close_if_last_window = true,
 	}
 	wk.register {
-		["<leader>tt"] = { "<cmd>NeoTreeFocusToggle<cr>", "Focus and Toggle NeoTree" }
+		["<leader>tt"] = { function()
+			if vim.bo.filetype == "neo-tree" then
+				vim.cmd [[Neotree toggle]]
+			else
+				vim.cmd [[Neotree focus]]
+			end
+		end, "Focus and Toggle NeoTree" }
 	}
 end
 return spec
