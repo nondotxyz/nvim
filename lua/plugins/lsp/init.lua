@@ -10,7 +10,8 @@ local spec = {
 			"j-hui/fidget.nvim",
 			config = true
 		},
-		{ "SmiteshP/nvim-navic" }
+		{ "SmiteshP/nvim-navic" },
+		{ "b0o/schemastore.nvim" }
 	},
 }
 
