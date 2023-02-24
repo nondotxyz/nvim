@@ -9,7 +9,7 @@ spec.config = function()
 	require("telescope").setup()
 
 	wk.register({
-		["<leader>tb"] = { require("telescope.builtin").buffers, "Open telescope builtins" }
+		["<leader>bb"] = { require("telescope.builtin").buffers, "Open telescope builtins" }
 	})
 end
 
