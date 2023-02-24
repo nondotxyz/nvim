@@ -14,6 +14,7 @@ spec.config = function()
 			theme = noirbuddy_lualine.theme,
 			component_separators = ' ',
 			section_separators = { left = '', right = '' },
+			disabled_filetypes = { "neo-tree" },
 		},
 		sections = {
 			lualine_a = {
@@ -38,12 +39,12 @@ spec.config = function()
 			},
 		},
 		inactive_sections = {
-			lualine_a = { 'filename' },
+			lualine_a = {},
 			lualine_b = {},
 			lualine_c = {},
 			lualine_x = {},
 			lualine_y = {},
-			lualine_z = { 'location' },
+			lualine_z = {},
 		},
 		tabline = {},
 		extensions = {},
