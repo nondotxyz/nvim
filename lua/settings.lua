@@ -1,4 +1,7 @@
-vim.g.mapleader = " "
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8

@@ -1,10 +1,11 @@
 local spec = {
 	{ "jesseleite/nvim-noirbuddy", dependencies = { "tjdevries/colorbuddy.nvim", branch = "dev" } },
+	{ "RRethy/nvim-base16" }
 }
 
 for _, plugin in ipairs(spec) do
 	plugin["config"] = function()
-		require("noirbuddy").setup({
+		--[[ require("noirbuddy").setup({
 			colors = {
 				primary = "#a9ff70",
 				secondary = "#71aa4b",
@@ -16,7 +17,8 @@ for _, plugin in ipairs(spec) do
 				diff_change = "#737373",
 				diff_delete = "#EC0034",
 			},
-		})
+		}) ]]
+		vim.cmd [[colorscheme base16-tomorrow-night]]
 	end
 end
 

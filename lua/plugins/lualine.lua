@@ -7,11 +7,11 @@ local spec = {
 }
 
 spec.config = function()
-	local noirbuddy_lualine = require('noirbuddy.plugins.lualine')
+	-- local noirbuddy_lualine = require('noirbuddy.plugins.lualine')
 
 	require('lualine').setup {
 		options = {
-			theme = noirbuddy_lualine.theme,
+			-- theme = noirbuddy_lualine.theme,
 			component_separators = ' ',
 			section_separators = { left = '', right = '' },
 			disabled_filetypes = { "neo-tree" },

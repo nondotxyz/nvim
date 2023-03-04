@@ -1,3 +1,4 @@
+
 wk.register({
 	["<C-Up>"] = { "<cmd>resize +2<cr>", "Increase window height" },
 	["<C-Down>"] = { "<cmd>resize -2<cr>", "Decrease window height" },
