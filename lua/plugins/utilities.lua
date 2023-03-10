@@ -44,5 +44,17 @@ return {
 		config = function()
 			require("Comment").setup()
 		end
+	},
+	{
+		"matbme/JABS.nvim",
+		config = function()
+			require 'jabs'.setup {}
+		end
+	},
+	{
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup {}
+		end
 	}
 }
