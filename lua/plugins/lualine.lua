@@ -2,13 +2,15 @@ local spec = {
 	'nvim-lualine/lualine.nvim',
 	dependencies = {
 		{ 'kyazdani42/nvim-web-devicons', lazy = true },
-		{ 'arkav/lualine-lsp-progress' }
+		{ 'arkav/lualine-lsp-progress' },
+		{ 'SmiteshP/nvim-navic' }
 	}
 }
 
 spec.config = function()
 	-- local noirbuddy_lualine = require('noirbuddy.plugins.lualine')
 
+	local navic = require("nvim-navic")
 	require('lualine').setup {
 		options = {
 			-- theme = noirbuddy_lualine.theme,
@@ -21,7 +23,7 @@ spec.config = function()
 				{ 'mode', separator = { left = '' }, right_padding = 2 },
 			},
 			lualine_b = { 'filename', 'branch' },
-			lualine_c = {},
+			lualine_c = { { navic.get_location, cond = navic.is_available } },
 			lualine_x = {},
 			lualine_y = { 'filetype', function()
 				local msg = "no lsp active"

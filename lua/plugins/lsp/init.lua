@@ -96,6 +96,7 @@ spec.config = function()
 			})
 		end
 
+		vim.pretty_print(client.server_capabilities)
 		if client.server_capabilities.documentSymbolProvider then
 			require("nvim-navic").attach(client, bufnr)
 		end
