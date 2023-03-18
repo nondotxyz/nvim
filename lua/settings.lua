@@ -1,4 +1,3 @@
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -15,3 +14,4 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.fillchars = { eob = " " }
