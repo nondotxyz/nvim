@@ -1,14 +1,5 @@
 return {
 	{
-		"folke/which-key.nvim",
-		init = function()
-			wk = require("which-key")
-		end,
-		lazy = false,
-		priority = 90,
-		config = true,
-	},
-	{
 		"rcarriga/nvim-notify",
 		config = function()
 			vim.notify = require("notify")
@@ -31,9 +22,10 @@ return {
 		end,
 	},
 	{
-		"akinsho/toggleterm.nvim", config = function()
-		require("toggleterm").setup()
-	end
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("toggleterm").setup()
+		end
 	},
 	{
 		"karb94/neoscroll.nvim",
