@@ -23,7 +23,7 @@ spec.config = function()
 				{ 'mode', separator = { left = '' }, right_padding = 2 },
 			},
 			lualine_b = { 'filename', 'branch' },
-			lualine_c = { { navic.get_location, cond = navic.is_available } },
+			lualine_c = {},
 			lualine_x = {},
 			lualine_y = { 'filetype', function()
 				local msg = "no lsp active"
@@ -47,6 +47,9 @@ spec.config = function()
 			lualine_x = {},
 			lualine_y = {},
 			lualine_z = {},
+		},
+		winbar = {
+			lualine_a = { { navic.get_location, cond = navic.is_available } }
 		},
 		tabline = {},
 		extensions = {},

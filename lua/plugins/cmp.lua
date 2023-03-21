@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 local spec = {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
@@ -9,7 +10,6 @@ local spec = {
 		'saadparwaiz1/cmp_luasnip',
 	}
 }
-
 spec.config = function()
 	local cmp = require("cmp")
 	local lspkind = require("lspkind")
@@ -21,13 +21,19 @@ spec.config = function()
 				require("luasnip").lsp_expand(args.body)
 			end
 		},
+		window = {
+			completion = {
+				side_padding = 1,
+				scrollbar = false,
+			}
+		},
 		formatting = {
+			fields = { "kind", "abbr", "menu" },
 			format = lspkind.cmp_format({
 				mode = 'symbol_text', -- show only symbol annotations
 				maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 				preset = "codicons",
 				ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-
 				-- The function below will be called before any actual modifications from lspkind
 				-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
 				before = function(entry, vim_item)
@@ -38,7 +44,7 @@ spec.config = function()
 		mapping = {
 			["<C-p>"] = cmp.mapping.select_prev_item(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
-			["<C-d>"] = cmp.mapping.scroll_docs( -4),
+			["<C-d>"] = cmp.mapping.scroll_docs(-4),
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.close(),
@@ -61,7 +67,7 @@ spec.config = function()
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
-				elseif luasnip.jumpable( -1) then
+				elseif luasnip.jumpable(-1) then
 					vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
 				else
 					fallback()
