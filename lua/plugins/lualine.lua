@@ -3,46 +3,13 @@ local spec = {
 	dependencies = {
 		{ 'kyazdani42/nvim-web-devicons', lazy = true },
 		{ 'arkav/lualine-lsp-progress' },
-		{
-			'SmiteshP/nvim-navic',
-			config = {
-				icons = {
-					File = ' ',
-					Module = ' ',
-					Namespace = ' ',
-					Package = ' ',
-					Class = ' ',
-					Method = ' ',
-					Property = ' ',
-					Field = ' ',
-					Constructor = ' ',
-					Enum = ' ',
-					Interface = ' ',
-					Function = ' ',
-					Variable = ' ',
-					Constant = ' ',
-					String = ' ',
-					Number = ' ',
-					Boolean = ' ',
-					Array = ' ',
-					Object = ' ',
-					Key = ' ',
-					Null = ' ',
-					EnumMember = ' ',
-					Struct = ' ',
-					Event = ' ',
-					Operator = ' ',
-					TypeParameter = ' '
-				}
-			}
-		}
-	}
+	},
+	event = { "BufReadPre", "BufNewFile" },
 }
 
 spec.config = function()
 	-- local noirbuddy_lualine = require('noirbuddy.plugins.lualine')
 
-	local navic = require("nvim-navic")
 	require('lualine').setup {
 		options = {
 			-- theme = noirbuddy_lualine.theme,
@@ -79,9 +46,6 @@ spec.config = function()
 			lualine_x = {},
 			lualine_y = {},
 			lualine_z = {},
-		},
-		winbar = {
-			lualine_a = { { navic.get_location, cond = navic.is_available } }
 		},
 		tabline = {},
 		extensions = {},

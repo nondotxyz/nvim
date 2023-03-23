@@ -8,7 +8,8 @@ local spec = {
 		'onsails/lspkind.nvim',
 		'L3MON4D3/LuaSnip',
 		'saadparwaiz1/cmp_luasnip',
-	}
+	},
+	event = "InsertEnter"
 }
 spec.config = function()
 	local cmp = require("cmp")

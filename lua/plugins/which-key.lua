@@ -3,12 +3,11 @@ local spec = {
 	init = function()
 		wk = require("which-key")
 	end,
-	lazy = false,
 	priority = 90,
 	config = true,
 }
 
-spec.config = function()
-end
+spec.config = true
+
 
 return spec

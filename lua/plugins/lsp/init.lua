@@ -10,8 +10,7 @@ local spec = {
 			"j-hui/fidget.nvim",
 			config = true
 		},
-		{ "SmiteshP/nvim-navic" },
-		{ "b0o/schemastore.nvim" }
+		{ "b0o/schemastore.nvim" },
 	},
 }
 
@@ -96,7 +95,6 @@ spec.config = function()
 			})
 		end
 
-		vim.pretty_print(client.server_capabilities)
 		if client.server_capabilities.documentSymbolProvider then
 			require("nvim-navic").attach(client, bufnr)
 		end

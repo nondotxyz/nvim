@@ -48,5 +48,12 @@ return {
 		config = function()
 			require("dressing").setup {}
 		end
+	},
+	{
+		"projekt0n/circles.nvim",
+		dependencies = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("circles").setup()
+		end
 	}
 }
