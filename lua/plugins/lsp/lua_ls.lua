@@ -8,6 +8,7 @@ return {
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+					["$HOME/.local/share/nvim/lazy/lazy.nvim/lua/lazy/types.lua"] = true
 				},
 			},
 		},
