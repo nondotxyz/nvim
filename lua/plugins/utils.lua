@@ -29,11 +29,20 @@ return {
 			require('dressing').setup {}
 		end,
 	},
-	{
+	--[[{
 		'projekt0n/circles.nvim',
 		dependencies = { 'kyazdani42/nvim-web-devicons' },
 		config = function()
 			require('circles').setup()
+		end,
+	},]]
+	--
+	{
+		'lambdalisue/suda.vim',
+		init = function()
+			vim.cmd [[
+			let g:suda_smart_edit = 1
+			]]
 		end,
 	},
 }
