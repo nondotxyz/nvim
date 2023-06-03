@@ -8,9 +8,13 @@ local spec = {
 		'catppuccin/nvim',
 		name = 'catppuccin',
 	},
+	{
+		'wuelnerdotexe/vim-enfocado',
+		name = 'enfocado',
+	},
 }
 
-local selected_theme = 'catppuccin'
+local selected_theme = 'enfocado'
 local config_table = {
 	['nvim-noirbuddy'] = function()
 		require('noirbuddy').setup {
@@ -33,6 +37,9 @@ local config_table = {
 	['catppuccin'] = function()
 		require('catppuccin').setup {}
 		vim.cmd.colorscheme 'catppuccin'
+	end,
+	['enfocado'] = function()
+		vim.cmd.colorscheme 'enfocado'
 	end,
 }
 

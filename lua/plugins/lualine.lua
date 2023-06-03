@@ -1,7 +1,7 @@
 local spec = {
 	'nvim-lualine/lualine.nvim',
 	dependencies = {
-		{ 'kyazdani42/nvim-web-devicons', lazy = true },
+		{ 'nvim-tree/nvim-web-devicons', lazy = true },
 		{ 'arkav/lualine-lsp-progress' },
 	},
 	event = { 'BufReadPre', 'BufNewFile' },

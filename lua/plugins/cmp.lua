@@ -35,7 +35,7 @@ spec.config = function()
 				maxwidth = 50,
 				preset = 'codicons',
 				ellipsis_char = '...',
-				before = function(entry, vim_item)
+				before = function(_, vim_item)
 					return vim_item
 				end,
 			},

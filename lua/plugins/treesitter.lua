@@ -1,13 +1,13 @@
 local spec = {
-	"nvim-treesitter/nvim-treesitter",
+	'nvim-treesitter/nvim-treesitter',
 	dependencies = {
-		'nvim-treesitter/nvim-treesitter-textobjects'
+		'nvim-treesitter/nvim-treesitter-textobjects',
 	},
-	build = ":TSUpdate",
+	build = ':TSUpdate',
+	event = { 'BufReadPre' },
 }
 
-
-spec.config = function() 
+spec.config = function()
 	require('nvim-treesitter.configs').setup {
 		ensure_installed = { 'lua', 'typescript', 'vim' },
 
